@@ -2,6 +2,7 @@
 const express = require('express');
 var React = require('react');
 var app = express();
+var modbus = require('jsmodbus');
 
 app.get('/', (req, res) => {
     res.send({ bye: 'budy' });
@@ -10,16 +11,16 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
 
-var modbus = require('jsmodbus');
+
 
 // create a modbus client
 var client = modbus.client.tcp.complete({
     'host': '54.94.237.167',
-    'port': '502',
+    'port': 502,
     'autoReconnect': true,
     'reconnectTimeout': 1000,
     'timeout': 5000,
-    'unitId': 0
+    'unitId': 100
 });
 
 client.connect();
