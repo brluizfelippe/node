@@ -1,6 +1,6 @@
 // JavaScript source code
 const express = require('express');
-var React = require('react').
+var React = require('react');
 var app = express();
 
 app.get('/', (req, res) => {
