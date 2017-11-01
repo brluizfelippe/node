@@ -1,8 +1,6 @@
 // JavaScript source code
 const express = require('express');
-var React = require('react');
 var app = express();
-var modbus = require('jsmodbus');
 
 app.get('/', (req, res) => {
     res.send({ bye: 'budy' });
